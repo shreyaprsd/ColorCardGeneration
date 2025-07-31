@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct ColorCardGenerationApp: App {
@@ -13,5 +14,6 @@ struct ColorCardGenerationApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: ColorRecord.self)
     }
 }
