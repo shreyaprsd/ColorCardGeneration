@@ -13,14 +13,9 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort:\ColorRecord.timeStamp , order: .reverse)
     private var colorRecords : [ColorRecord]
-    @State private var currentColor : Color = .accentColor
-    @State private var hexCode = String()
-   
-    
-   
     var body: some View {
         
-        VStack(alignment: .leading,spacing: 15) {
+        VStack(alignment: .leading,spacing: 2) {
             Text("Color Card 🎨")
                 .font(.largeTitle)
                 .fontWeight(.bold)
@@ -51,6 +46,7 @@ struct ContentView: View {
                         .buttonBorderShape(.roundedRectangle)
                         .buttonStyle(.bordered)
                     }
+                    .padding()
                     .background(Color(.systemBackground))
                         .cornerRadius(12)
                     .shadow(color: .black.opacity(0.4), radius: 4, x: 0, y: 2)

@@ -10,7 +10,7 @@ import SwiftUI
 struct ColorCard: View {
     let record : ColorRecord
     var body: some View {
-        VStack(spacing: 12){
+        HStack(spacing:8){
             VStack{
                 RoundedRectangle(cornerRadius:  8)
                     .fill(record.color)
@@ -20,13 +20,14 @@ struct ColorCard: View {
                     .fontWeight(.medium)
                 
             }.padding()
-        
-            Text(record.timeStamp, style: .date)
-                .font(.title3)
-                .fontWeight(.light)
-            Text(record.timeStamp , style: .time)
-                .font(.title3)
-                .fontWeight(.light)
+            VStack{
+                Text(record.timeStamp, style: .date)
+                    .font(.title3)
+                    .fontWeight(.light)
+                Text(record.timeStamp , style: .time)
+                    .font(.title3)
+                    .fontWeight(.light)
+            }
         }
     }
 }
